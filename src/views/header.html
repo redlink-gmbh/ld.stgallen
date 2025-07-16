@@ -5,7 +5,23 @@
   ${typeof graph !== 'undefined' ? '<script id="data" type="application/ld+json">' + graph + '</script>':''}
 
   <link href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/paper/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <style>
+      a {
+        color: #0B712B !important;
+      }
 
+      .yasr_btn.selected {
+        background-color: #0B712B !important;
+      }
+
+      .nav-tabs>li.active>a {
+        box-shadow: inset 0 -2px 0 #0B712B
+      }
+
+      .yasgui .nav-pills > li.active > a {
+        background-color: lightgray !important;
+      }
+  </style>
   <script src="https://cdn.jsdelivr.net/g/es6-promise@1.0.0"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jsonld/0.4.12/jsonld.js"></script>
   ${get('moduleHeader') || ''}

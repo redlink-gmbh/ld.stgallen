@@ -1,7 +1,7 @@
 {
   "baseConfig": "trifid:config-sparql.json",
   "datasetBaseUrl": "https://stgallen.redlink.io/",
-  "sparqlEndpointUrl": "https://stgallen.redlink.io/query",
+  "sparqlEndpointUrl": "https://stgallen.redlink.io/query/",
   "sparqlEndpointAuthentication": {
     "user": "env:SPARQL_ENDPOINT_USER",
     "password": "env:SPARQL_ENDPOINT_PASSWORD"
@@ -61,7 +61,11 @@
   "plugins": {
     "head405": {
       "priority": 165,
-      "module": "./src/head-405.js"
+      "module": "./src/plugins/head-405.js"
+    },
+    "rootRedirect": {
+      "priority": 1,
+      "module": "./src/plugins/root-redirect.js"
     }
   }
 }
