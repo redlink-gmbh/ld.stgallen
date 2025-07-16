@@ -1,0 +1,14 @@
+{
+  "name": "ld.stgallen",
+  "version": "1.19.6",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "http-errors": "^2.0.0",
+    "pino": "^9.7.0",
+    "trifid": "^2.4.0"
+  },
+  "scripts": {
+    "start-local": "trifid --config config.json"
+  }
+}
