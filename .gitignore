@@ -2,3 +2,5 @@ node_modules
 .gitignore
 .git
 .idea
+/src/views/googlekey.html
+

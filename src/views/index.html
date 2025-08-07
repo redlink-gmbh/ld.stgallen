@@ -25,10 +25,9 @@ ${include('cwd:src/views/footer.html')}
 
 </div>
 
-<script type="text/javascript">
-  /* global jsonld */
+${include('cwd:src/views/googlekey.html')}
 
-  const GOOGLE_KEY = 'SET_YOUR_GOOGLE_KEY_HERE'
+<script type="text/javascript">
   var termRegEx = new RegExp('(#|/)([^#/]*)$')
   var titlePredicates = ['http://schema.org/name', 'http://schema.org/headline', 'http://purl.org/dc/terms/title', 'http://www.w3.org/2000/01/rdf-schema#label']
 
@@ -252,9 +251,7 @@ ${include('cwd:src/views/footer.html')}
   }
 
   function renderMap (graph) {
-    const subject = graph.filter(function (subject) {
-      return subject['@id'] === decodeURIComponent(window.location.href)
-    }).shift()
+    const subject = graph[0]
     console.log(subject)
     const lat = subject['http://www.w3.org/2003/01/geo/wgs84_pos#lat']?.[0]?.['@value']
     const long = subject['http://www.w3.org/2003/01/geo/wgs84_pos#long']?.[0]?.['@value']
@@ -265,10 +262,7 @@ ${include('cwd:src/views/footer.html')}
   }
 
   function renderImage (graph) {
-    var subject = graph.filter(function (subject) {
-      return subject['@id'] === decodeURIComponent(window.location.href)
-    }).shift()
-    url = subject['http://schema.org/thumbnailUrl']?.[0]?.['@value']
+    url = graph[0]['http://schema.org/thumbnailUrl']?.[0]?.['@value']
     if(url) {
       return '<img src="'+url+'">'
     }
