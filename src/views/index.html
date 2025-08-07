@@ -207,7 +207,6 @@ ${include('cwd:src/views/footer.html')}
       }
 
       return objects.map(function (object) {
-        console.log(object)
         return '<tr>' +
                 '<td class="table-predicate col-lg-4">' + renderPredicate(predicate, predicateLabel(predicate, vocab)) + '</td>' +
                 '<td class="table-object col-lg-8">' + renderNode(object, '@id' in object ? iriLabel(object['@id']) : '') + '</td>' +
@@ -253,11 +252,12 @@ ${include('cwd:src/views/footer.html')}
   }
 
   function renderMap (graph) {
-    var subject = graph.filter(function (subject) {
+    const subject = graph.filter(function (subject) {
       return subject['@id'] === decodeURIComponent(window.location.href)
     }).shift()
-    lat = subject['http://www.w3.org/2003/01/geo/wgs84_pos#lat']?.[0]?.['@value']
-    long = subject['http://www.w3.org/2003/01/geo/wgs84_pos#long']?.[0]?.['@value']
+    console.log(subject)
+    const lat = subject['http://www.w3.org/2003/01/geo/wgs84_pos#lat']?.[0]?.['@value']
+    const long = subject['http://www.w3.org/2003/01/geo/wgs84_pos#long']?.[0]?.['@value']
     if(lat && long) {
       return '<img src="https://maps.googleapis.com/maps/api/staticmap?center='+lat+','+long+'&zoom=14&size=600x400&markers=color:red&key='+GOOGLE_KEY+'" alt="Map of Vienna with marker">'
     }
