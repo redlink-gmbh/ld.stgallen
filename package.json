@@ -6,7 +6,8 @@
   "dependencies": {
     "http-errors": "^2.0.0",
     "pino": "^9.7.0",
-    "trifid": "^2.4.0"
+    "trifid": "^2.4.0",
+    "axios": "^1.7.9"
   },
   "scripts": {
     "start-local": "trifid --config config.json"

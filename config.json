@@ -6,6 +6,7 @@
     "user": "env:SPARQL_ENDPOINT_USER",
     "password": "env:SPARQL_ENDPOINT_PASSWORD"
   },
+  "server.logLevel": "debug",
   "rewrite": {
     "root": {
       "ignore": "http(s)?://[^/]+/query",
@@ -53,6 +54,10 @@
     "head405": {
       "priority": 165,
       "module": "./src/plugins/head-405.js"
+    },
+    "gpt": {
+      "priority": 2,
+      "module": "./src/plugins/gpt.js"
     },
     "rootRedirect": {
       "priority": 1,
