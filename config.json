@@ -1,7 +1,7 @@
 {
   "baseConfig": "trifid:config-sparql.json",
-  "datasetBaseUrl": "https://stgallen.redlink.io/",
-  "sparqlEndpointUrl": "https://stgallen.redlink.io/query/",
+  "datasetBaseUrl": "https://ld.sg.ch/",
+  "sparqlEndpointUrl": "https://ld.sg.ch/query/",
   "sparqlEndpointAuthentication": {
     "user": "env:SPARQL_ENDPOINT_USER",
     "password": "env:SPARQL_ENDPOINT_PASSWORD"

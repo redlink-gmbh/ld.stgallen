@@ -11,7 +11,7 @@ function factory (router) {
 
             // POST to your axios server
             const upstream = await axios.post(
-                'https://stgallen.redlink.io/query',
+                'https://ld.sg.ch/query',
                 query,
                 {headers: {
                     'Content-Type': 'application/sparql-query',
